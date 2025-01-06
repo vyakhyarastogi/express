@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+require("dotenv").config();
+const PORT = process.env.PORT;
 
 // app.get("/", (req, res) => {
 //     res.send(`server is running`);
@@ -51,6 +53,6 @@ app.delete("/delete/:id", (req, res) => {
     return res.status(200).send(teaData)
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log(`<h1>server is running at port 3000</h1>`)
 })
